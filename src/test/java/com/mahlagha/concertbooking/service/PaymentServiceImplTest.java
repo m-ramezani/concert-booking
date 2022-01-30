@@ -1,5 +1,6 @@
 package com.mahlagha.concertbooking.service;
 
+import com.mahlagha.concertbooking.BaseTestClass;
 import com.mahlagha.concertbooking.domain.Event;
 import com.mahlagha.concertbooking.domain.Ticket;
 import com.mahlagha.concertbooking.domain.User;
@@ -8,7 +9,6 @@ import com.mahlagha.concertbooking.repository.TransactionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -17,9 +17,9 @@ import java.util.Optional;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-class PaymentServiceImplTest {
+class PaymentServiceImplTest extends BaseTestClass {
 
-    @InjectMocks
+    @Mock
     private PaymentServiceImpl paymentService;
 
     @Mock
@@ -28,7 +28,9 @@ class PaymentServiceImplTest {
     private Long userId;
 
     @BeforeEach
-    void setUp() {
+    @Override
+    public void setUp() {
+        super.setUp();
         userId = 100L;
     }
 
