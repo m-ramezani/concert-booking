@@ -9,6 +9,7 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "of")
+@Entity
 @Table(name = "user_ticket")
 public class UserTicket {
     @Id
@@ -18,9 +19,11 @@ public class UserTicket {
     @Enumerated(EnumType.STRING)
     private TicketStatus ticketStatus;
 
-    @Column(name = "ticket_id")
+    @ManyToOne
+    @JoinColumn(name = "ticket_id")
     private Ticket ticket;
 
-    @Column(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 }

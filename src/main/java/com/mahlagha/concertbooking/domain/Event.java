@@ -3,6 +3,7 @@ package com.mahlagha.concertbooking.domain;
 import lombok.*;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.Instant;
@@ -11,6 +12,7 @@ import java.time.Instant;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "of")
+@Entity
 
 public class Event {
     @Id

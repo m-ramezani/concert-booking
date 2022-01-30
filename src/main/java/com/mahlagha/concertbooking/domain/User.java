@@ -9,6 +9,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "of")
+@Entity
 
 public class User {
     @Id

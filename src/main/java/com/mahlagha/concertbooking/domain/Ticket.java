@@ -8,6 +8,7 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "of")
+@Entity
 
 public class Ticket {
     @Id
