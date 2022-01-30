@@ -4,7 +4,7 @@ RUN mkdir -p /app
 WORKDIR /app
 ADD src /app/src
 ADD pom.xml /app
-RUN mvn clean install
+RUN mvn clean test install
 # EXPOSE ${server.port}
 EXPOSE 8080
 ENTRYPOINT [ "java", "-jar", "./target/concert-booking-1.0.0.jar" ]
