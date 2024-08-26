@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
 @Service
-@Transactional
 public class EventServiceImpl implements EventService {
     private final EventRepository eventRepository;
 
@@ -18,6 +17,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
+    @Transactional
     public Page<Event> listEvents(Pageable pageable) {
         return eventRepository.findAll(pageable);
     }
